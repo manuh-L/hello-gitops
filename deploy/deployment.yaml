@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-gitops
+  name: hello-gitops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-gitops
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-gitops
+    spec:
+      containers:
+      - image: nhiuana/hello:nginx
+        name: hello
+        resources: {}
+status: {}
